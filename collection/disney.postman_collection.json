@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "32f2a705-bcca-45a3-a1a8-38d25667c1d8",
+		"name": "disney",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Pelicula",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"title\": \"lilo & stitch\",\r\n        \"createAt\":\"2002-05-02\",\r\n        \"score\": 5,\r\n        \"image\":\"https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/lilo-stitch-1920581.jpg\",\r\n        \"genero\":{\r\n            \"name\":\"Animacion\", \r\n            \"image\":\"https://www.industriaanimacion.com/wp-content/uploads/2020/12/Cover-15-960x576.jpg\"\r\n        },\r\n        \"personaje\":[{\r\n            \"name\":\"Lilo\",\r\n            \"weigh\":20,\r\n            \"age\":7,\r\n            \"history\":\"Se mueren los padres y adopta una mascota del espacio\",\r\n            \"image\":\"https://3.bp.blogspot.com/-ZDyksYGRDMM/Tkk1UTrs2DI/AAAAAAAAT7M/KDp1LaT79lA/s1600/imagenesdeliloystitchparaimprimir.jpg\"\r\n        },{\r\n            \"name\":\"Stitch\",\r\n            \"weigh\":80,\r\n            \"age\":2,\r\n            \"history\":\"Un esperimento se vuelve mascota en la tierra\",\r\n            \"image\":\"https://static.wikia.nocookie.net/disney/images/a/a7/Stitch-L%26S.png/revision/latest/scale-to-width-down/306?cb=20120128162656&path-prefix=es\"\r\n        }]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Personajes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Personaje",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"name\":\"Jumba Jookiba\",\r\n            \"weigh\":100,\r\n            \"age\":50,\r\n            \"history\":\"Creo a Stitch\",\r\n            \"image\":\"https://static.wikia.nocookie.net/disney/images/5/57/Jumba.png/revision/latest/scale-to-width-down/350?cb=20130723072146&path-prefix=es\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Personajes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/characters?id=5&name=Lilo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						},
+						{
+							"key": "name",
+							"value": "Lilo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Personaje",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"id\": 5,\r\n            \"name\":\"Dr Jumba Jookiba\",\r\n            \"weigh\":100,\r\n            \"age\":50,\r\n            \"history\":\"Inventor malvado del espacio\",\r\n            \"image\":\"https://static.wikia.nocookie.net/disney/images/5/57/Jumba.png/revision/latest/scale-to-width-down/350?cb=20130723072146&path-prefix=es\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalle Personaje",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/characters/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"characters",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Personaje",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/characters/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"characters",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Pelicula",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalle Pelicula",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/movies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Pelicula",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"title\": \"lilo & stitch\",\r\n        \"createAt\":\"2002-05-02\",\r\n        \"score\": 5,\r\n        \"image\":\"https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/lilo-stitch-1920581.jpg\",\r\n        \"genero\":{\r\n            \"name\":\"Animacion\", \r\n            \"image\":\"https://www.industriaanimacion.com/wp-content/uploads/2020/12/Cover-15-960x576.jpg\"\r\n        },\r\n        \"personaje\":[{\r\n            \"name\":\"Lilo\",\r\n            \"weigh\":20,\r\n            \"age\":7,\r\n            \"history\":\"Se mueren los padres y adopta una mascota del espacio\",\r\n            \"image\":\"https://3.bp.blogspot.com/-ZDyksYGRDMM/Tkk1UTrs2DI/AAAAAAAAT7M/KDp1LaT79lA/s1600/imagenesdeliloystitchparaimprimir.jpg\"\r\n        },{\r\n            \"name\":\"Stitch\",\r\n            \"weigh\":80,\r\n            \"age\":2,\r\n            \"history\":\"Un esperimento se vuelve mascota en la tierra\",\r\n            \"image\":\"https://static.wikia.nocookie.net/disney/images/a/a7/Stitch-L%26S.png/revision/latest/scale-to-width-down/306?cb=20120128162656&path-prefix=es\"\r\n        }]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Pelicula",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"title\": \"lilo & stitch\",\r\n        \"createAt\":\"2002-05-02\",\r\n        \"score\": 5,\r\n        \"image\":\"https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/lilo-stitch-1920581.jpg\",\r\n        \"genero\":{\r\n            \"name\":\"Animacion\", \r\n            \"image\":\"https://www.industriaanimacion.com/wp-content/uploads/2020/12/Cover-15-960x576.jpg\"\r\n        },\r\n        \"personaje\":[{\r\n            \"name\":\"Lilo\",\r\n            \"weigh\":20,\r\n            \"age\":7,\r\n            \"history\":\"Se mueren los padres y adopta una mascota del espacio\",\r\n            \"image\":\"https://3.bp.blogspot.com/-ZDyksYGRDMM/Tkk1UTrs2DI/AAAAAAAAT7M/KDp1LaT79lA/s1600/imagenesdeliloystitchparaimprimir.jpg\"\r\n        },{\r\n            \"name\":\"Stitch\",\r\n            \"weigh\":80,\r\n            \"age\":2,\r\n            \"history\":\"Un esperimento se vuelve mascota en la tierra\",\r\n            \"image\":\"https://static.wikia.nocookie.net/disney/images/a/a7/Stitch-L%26S.png/revision/latest/scale-to-width-down/306?cb=20120128162656&path-prefix=es\"\r\n        }]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
